@@ -1,0 +1,23 @@
+
+<!doctype HTML>
+<html>
+<head>
+<script src="https://aframe.io/releases/0.6.1/aframe.min.js"></script>
+<script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.5.0/aframe/build/aframe-ar.js"> </script>
+</head>
+    <body style='margin : 0px; overflow: hidden;'>
+    <a-scene  embedded arjs>
+    <a-entity camera="active: true" look-controls wasd-controls position="0 0 0" data-aframe-default-camera></a-entity>
+    <a-assets>
+     
+
+        <a-asset-item id="myasset" src="render_mesh.obj"></a-asset-item>
+        <img id="mytexture" src="front.jpg">
+       </a-assets>
+    <a-marker preset="hiro">
+    <a-obj-model position="0.0, 0.0, 0.0" material="src: #mytexture" 
+    rotation = "-90.0, 0.0, 0.0" src="#myasset" scale="2.0 2.0 2.0">
+    </a-obj-model></a-marker>    
+    <a-plane rotation="-90 0 0"></a-plane></a-scene>
+      </body>
+    </html>
